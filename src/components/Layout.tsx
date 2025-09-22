@@ -1,0 +1,96 @@
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const isHomePage = location.pathname === "/";
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav
+        className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+          isScrolled
+            ? "bg-white/80 backdrop-blur-2xl border-b border-gray-200"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            <Link to="/" className="flex items-center">
+              <img
+                src="/images/logo.png"
+                alt="ARSF logo"
+                className="w-12 h-12 object-contain"
+              />
+            </Link>
+
+            <div className="hidden md:flex space-x-1 bg-white rounded-full p-1 border border-gray-200">
+              <Link
+                to="/"
+                className={`capitalize font-medium px-4 py-2 rounded-full transition-all duration-300 ${
+                  location.pathname === "/"
+                    ? "text-white bg-[#02463D]"
+                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                }`}
+              >
+                Home
+              </Link>
+              <Link
+                to="/about"
+                className={`capitalize font-medium px-4 py-2 rounded-full transition-all duration-300 ${
+                  location.pathname === "/about"
+                    ? "text-white bg-[#02463D]"
+                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                }`}
+              >
+                About
+              </Link>
+              <Link
+                to="/products"
+                className={`capitalize font-medium px-4 py-2 rounded-full transition-all duration-300 ${
+                  location.pathname === "/products"
+                    ? "text-white bg-[#02463D]"
+                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                }`}
+              >
+                Products
+              </Link>
+              <Link
+                to="/contact"
+                className={`capitalize font-medium px-4 py-2 rounded-full transition-all duration-300 ${
+                  location.pathname === "/contact"
+                    ? "text-white bg-[#02463D]"
+                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                }`}
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <main className={isHomePage ? "" : "pt-20"}>{children}</main>
+    </div>
+  );
+};
+
+export default Layout;

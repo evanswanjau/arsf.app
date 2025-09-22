@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "swiper/css";
+@import "swiper/css/navigation";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -116,5 +118,64 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: "Alan Sans", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+      Cantarell, Noto Sans, sans-serif;
   }
+  h1 {
+    font-weight: 900;
+    font-family: "Alan Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI,
+      Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  }
+  h2 {
+    font-weight: 800;
+    font-family: "Alan Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI,
+      Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  }
+  h3 {
+    font-weight: 700;
+    font-family: "Alan Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI,
+      Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  }
+  h4 {
+    font-weight: 700;
+    font-family: "Alan Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI,
+      Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  }
+  h5 {
+    font-weight: 600;
+    font-family: "Alan Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI,
+      Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  }
+  h6 {
+    font-weight: 600;
+    font-family: "Alan Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI,
+      Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  }
+}
+
+/* Global theme overrides */
+:root {
+  --brand-color: #02463d;
+}
+
+
+/* Utility: force Raleway font where needed (e.g., non-heading elements acting as headings) */
+.font-raleway {
+  font-family: "Raleway", ui-sans-serif, system-ui, -apple-system, Segoe UI,
+    Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+}
+
+/* Utility: hide native scrollbars (keep scroll behavior) */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Swiper: hide default arrow pseudo-elements to avoid double arrows */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: none;
 }

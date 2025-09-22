@@ -37,7 +37,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <img
                 src="/images/logo.png"
                 alt="ARSF logo"
-                className="w-12 h-12 object-contain"
+                className="w-24 h-24 object-contain"
               />
             </Link>
 

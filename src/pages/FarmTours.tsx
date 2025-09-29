@@ -1,4 +1,5 @@
 import React from "react";
+import { Calendar, MessageCircle } from "lucide-react";
 // Icons removed as UI is simplified to paragraphs and images
 
 const FarmTours: React.FC = () => {
@@ -7,7 +8,7 @@ const FarmTours: React.FC = () => {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <img
-          src="/images/hero2.jpg"
+          src="/images/farm-tours.jpg"
           alt="Farm tour"
           className="absolute inset-0 w-full h-96 object-cover object-center"
         />
@@ -124,7 +125,7 @@ const FarmTours: React.FC = () => {
                 rows={5}
                 placeholder="Tell us more about your visit (access needs, timing flexibility, topics of interest)"
               />
-              <button className="w-full cursor-pointer border border-[#02463D] bg-[#02463D] hover:bg-white hover:text-[#02463D] text-white py-3 rounded-lg font-semibold">
+              <button className="w-full cursor-pointer border border-[#02463D] bg-[#02463D] hover:bg:white hover:text-[#02463D] text-white py-3 rounded-lg font-semibold">
                 Request booking
               </button>
             </form>
@@ -158,9 +159,10 @@ const FarmTours: React.FC = () => {
           </div>
           <div>
             <img
-              src="/images/hero.jpg"
+              src="/images/farm-tours.jpg"
               alt="Farm fields and production beds"
               className="w-full h-96 object-cover rounded-lg"
+              loading="lazy"
             />
           </div>
         </div>
@@ -170,9 +172,10 @@ const FarmTours: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
           <div className="order-2 lg:order-1">
             <img
-              src="/images/hero2.jpg"
+              src="/images/for-everyone.jpg"
               alt="Compost systems and biodiversity corridors"
               className="w-full h-96 object-cover rounded-lg"
+              loading="lazy"
             />
           </div>
           <div className="order-1 lg:order-2 space-y-4">
@@ -250,16 +253,18 @@ const FarmTours: React.FC = () => {
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#tour-booking"
-              className="inline-block px-6 py-3 rounded-lg bg-[#02463D] text-white font-semibold hover:bg-[#013a33] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#02463D] text-white font-semibold hover:bg-[#013a33] transition-colors"
             >
+              <Calendar className="w-5 h-5" />
               Book your tour
             </a>
             <a
               href="https://wa.me/254700000000?text=Hi%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20farm%20tours"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 rounded-lg bg-green-600 text-white font-semibold hover:bg-green-700 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-green-600 text-white font-semibold hover:bg-green-700 transition-colors"
             >
+              <MessageCircle className="w-5 h-5" />
               Chat on WhatsApp
             </a>
           </div>

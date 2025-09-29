@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
           className="absolute inset-0 w-full h-96 object-cover object-center"
         />
         <div className="absolute inset-0 bg-black/30" />
-        <div className="relative max-w-7xl mx-auto px-6 py-32 text-white">
+        <div className="relative max-w-7xl mx-auto px-6 py-24 text-white">
           <h1 className="text-4xl sm:text-5xl font-extrabold">Contact Us</h1>
           <p className="mt-4 text-white/90 max-w-3xl text-lg">
             We'd love to hear from you. Whether you have questions, ideas, or

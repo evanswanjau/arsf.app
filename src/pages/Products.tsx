@@ -27,9 +27,59 @@ const items = [
     img: "/images/products/maize.png",
   },
   {
-    name: "Free-range Eggs",
+    name: "Eggs",
     desc: "Pasture-raised hens produce nutrient-dense eggs.",
     img: "/images/products/eggs.jpeg",
+  },
+  {
+    name: "Spinach",
+    desc: "Leafy greens grown in living soils for great flavor and nutrition.",
+    img: "/images/products/spinach.jpg",
+  },
+  {
+    name: "Tomatoes",
+    desc: "Field-ripened tomatoes harvested for peak flavor.",
+    img: "/images/products/tomatoes.webp",
+  },
+  {
+    name: "Kale (Sukuma)",
+    desc: "Hearty greens favored in local kitchens, grown with mulch and drip.",
+    img: "/images/products/kale.jpg",
+  },
+  {
+    name: "Chilli Peppers",
+    desc: "Spicy varieties for sauces and seasoning, grown responsibly.",
+    img: "/images/products/chilli-peppers.png",
+  },
+  {
+    name: "Spring Onions",
+    desc: "Tender scallions for salads and cooking.",
+    img: "/images/products/spring-onions.webp",
+  },
+  {
+    name: "Coriander",
+    desc: "Fresh coriander for cooking and garnishing.",
+    img: "/images/products/coriander.webp",
+  },
+  {
+    name: "Avocado",
+    desc: "Fresh avocados for cooking and garnishing.",
+    img: "/images/products/avocado.webp",
+  },
+  {
+    name: "Mangoes",
+    desc: "Vibrant mangoes rich in flavor and color.",
+    img: "/images/products/mangoes.webp",
+  },
+  {
+    name: "Ginger",
+    desc: "Fresh ginger for cooking and garnishing.",
+    img: "/images/products/ginger.webp",
+  },
+  {
+    name: "Garlic",
+    desc: "Fresh garlic for cooking and garnishing.",
+    img: "/images/products/garlic.webp",
   },
 ];
 
@@ -39,9 +89,15 @@ const Products: React.FC = () => {
       {/* Hero */}
       <section
         className="relative overflow-hidden"
-        style={{ backgroundColor: "#02463D" }}
+        aria-label="Products hero"
+        style={{
+          backgroundImage: "url(/images/products.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
-        <div className="max-w-7xl mx-auto px-6 py-20">
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative max-w-7xl mx-auto px-6 py-20">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white">
             Products & Produce
           </h1>
@@ -53,10 +109,10 @@ const Products: React.FC = () => {
         </div>
       </section>
 
-      {/* Featured grid */}
+      {/* Products grid */}
       <section className="py-16 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {items.map((p) => (
               <article
                 key={p.name}
@@ -66,6 +122,7 @@ const Products: React.FC = () => {
                   src={p.img}
                   alt={p.name}
                   className="w-full h-56 object-cover"
+                  loading="lazy"
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900">
@@ -76,43 +133,18 @@ const Products: React.FC = () => {
               </article>
             ))}
           </div>
-
-          <div className="mt-12 grid md:grid-cols-3 gap-8">
-            {[
-              {
-                t: "Regenerative inputs",
-                d: "Compost, cover crops, and mulches improve soil structure and nutrient cycling while reducing external inputs.",
-              },
-              {
-                t: "Water-wise",
-                d: "Drip systems, mulching, and micro-catchments dramatically reduce evaporation and runoff.",
-              },
-              {
-                t: "Local varieties",
-                d: "We work with adaptive, open-pollinated seeds and farmer-selected varieties suited to our climate.",
-              },
-            ].map((c) => (
-              <article
-                key={c.t}
-                className="bg-gray-50 p-6 rounded-lg border border-gray-200"
-              >
-                <h4 className="text-lg font-semibold text-[#02463D]">{c.t}</h4>
-                <p className="mt-2 text-gray-700 leading-relaxed">{c.d}</p>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Ordering / partnerships */}
-      <section className="py-16" style={{ backgroundColor: "#02463D" }}>
-        <div className="max-w-7xl mx-auto px-6 text-white">
+      {/* Ordering / partnerships CTA */}
+      <section className="py-16" style={{ backgroundColor: "#A4BE66" }}>
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
-              <h2 className="text-3xl font-bold">
+              <h2 className="text-3xl font-bold text-[#02463D]">
                 Wholesale, retail, and kitchen partners
               </h2>
-              <p className="mt-4 text-white/85 leading-relaxed">
+              <p className="mt-4 text-gray-800/90 leading-relaxed">
                 We supply restaurants, schools, and community kitchens with
                 fresh produce and eggs. If you are building a local sourcing
                 program or designing a seasonal menu, we would love to
@@ -122,13 +154,13 @@ const Products: React.FC = () => {
             <div className="flex gap-4">
               <a
                 href="#contact"
-                className="px-6 py-3 bg-white text-[#02463D] font-semibold"
+                className="px-6 py-3 rounded-lg bg-[#02463D] text-white font-semibold hover:bg-[#013a33] transition-colors"
               >
                 Contact us
               </a>
               <a
                 href="#visit"
-                className="px-6 py-3 border border-white text-white font-semibold hover:bg-white hover:text-[#02463D]"
+                className="px-6 py-3 rounded-lg border border-[#02463D] text-[#02463D] font-semibold hover:bg-[#02463D] hover:text-white transition-colors"
               >
                 Visit the farm
               </a>

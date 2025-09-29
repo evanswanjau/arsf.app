@@ -284,7 +284,7 @@ const Gallery: React.FC = () => {
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[#02463D] text-[#02463D] font-semibold hover:bg-[#02463D] hover:text-white transition-colors"
             >
               <Mail className="w-5 h-5" />
-              Get in touch
+              Contact Us
             </a>
           </div>
         </div>

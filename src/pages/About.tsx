@@ -1,4 +1,5 @@
 import React from "react";
+import { Mail, Calendar } from "lucide-react";
 
 const About: React.FC = () => {
   return (
@@ -6,9 +7,14 @@ const About: React.FC = () => {
       {/* Hero */}
       <section
         className="relative overflow-hidden"
-        style={{ backgroundColor: "#02463D" }}
+        style={{
+          backgroundImage: "url(/images/our-philosophy.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
-        <div className="max-w-7xl mx-auto px-6 py-24">
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative max-w-7xl mx-auto px-6 py-24">
           <div className="max-w-3xl text-white">
             <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
               About Arabuko Sokoke Ridge Farm
@@ -67,11 +73,41 @@ const About: React.FC = () => {
             </div>
             <div>
               <img
-                src="/images/hero3.jpg"
+                src="/images/biodiversity-corridors.jpg"
                 alt="Farm view across the ridge"
-                className="w-full h-[28rem] object-cover rounded-lg"
+                className="w-full h-[45rem] object-cover rounded-lg"
+                loading="lazy"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Highlights */}
+      <section className="py-16 bg-gray-50 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-[#02463D] mb-8">
+            In Pictures
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <img
+              src="/images/compost-systems.jpg"
+              alt="Compost systems"
+              className="w-full h-64 object-cover rounded-lg"
+              loading="lazy"
+            />
+            <img
+              src="/images/water-conservation.jpg"
+              alt="Water conservation"
+              className="w-full h-64 object-cover rounded-lg"
+              loading="lazy"
+            />
+            <img
+              src="/images/solar-energy.jpg"
+              alt="Solar energy"
+              className="w-full h-64 object-cover rounded-lg"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
@@ -109,10 +145,7 @@ const About: React.FC = () => {
                 d: "A thriving farm is a place of discovery. We host tours, workshops, and volunteer days that make sustainability practical, welcoming, and fun.",
               },
             ].map((c) => (
-              <article
-                key={c.t}
-                className="bg-white p-6 rounded-lg border border-gray-200"
-              >
+              <article key={c.t} className="bg-white p-6 rounded-lg">
                 <h3 className="text-xl font-semibold text-[#02463D]">{c.t}</h3>
                 <p className="mt-3 text-gray-700 leading-relaxed">{c.d}</p>
               </article>
@@ -121,72 +154,83 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Impact */}
+      {/* Our Approach (improved layout) */}
       <section className="py-20 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-[#02463D]">
-                Impact You Can Measure
-              </h2>
-              <div className="mt-6 space-y-5 text-gray-700 leading-relaxed">
-                <p>
-                  We believe impact must be verifiable. Our team combines farmer
-                  knowledge with simple monitoring tools to track soil organic
-                  matter, water usage, seedling survival, crop yields, and
-                  household income. We use this information to refine our
-                  practices, inform policy, and guide investment.
-                </p>
-                <p>
-                  Over recent seasons, survival rates for indigenous seedlings
-                  have climbed due to better species selection, mulching, and
-                  timing. Participating farmers report steadier incomes through
-                  diversified production and improved market access. Our
-                  workshops—ranging from composting and agroforestry design to
-                  beekeeping—help transfer these practices quickly and
-                  confidently.
-                </p>
-                <p>
-                  Impact also means stories: a school that planted a food
-                  forest; a women’s group that launched a nursery enterprise; a
-                  youth cohort that designed a water-saving market garden; a
-                  researcher who co-authored an open dataset; a family that now
-                  spends weekends tending a shared plot. These journeys shape
-                  the ridge as much as the trees themselves.
-                </p>
-              </div>
-            </div>
-            <div>
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { n: "10,000+", l: "Trees planted" },
-                  { n: "2,500", l: "Farmers trained" },
-                  { n: "98%", l: "Seedling survival" },
-                  { n: "15", l: "Village groups" },
-                ].map((m) => (
-                  <div
-                    key={m.l}
-                    className="bg-gray-50 p-6 text-center rounded-lg border border-gray-200"
-                  >
-                    <div className="text-2xl font-extrabold text-[#02463D]">
-                      {m.n}
-                    </div>
-                    <div className="text-gray-700 mt-1">{m.l}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <h2 className="text-3xl font-bold text-[#02463D] mb-10">
+            Our Approach
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <article className="bg-white rounded-xl border border-gray-200 p-6">
+              <h3 className="text-xl font-semibold text-[#02463D]">
+                Regenerative farming
+              </h3>
+              <ul className="mt-3 space-y-2 text-gray-700 list-disc pl-5">
+                <li>Compost, cover crops, mulches</li>
+                <li>Water-wise drip irrigation</li>
+                <li>Flavor- and soil-first rotations</li>
+              </ul>
+            </article>
+            <article className="bg-white rounded-xl border border-gray-200 p-6">
+              <h3 className="text-xl font-semibold text-[#02463D]">
+                Conservation in practice
+              </h3>
+              <ul className="mt-3 space-y-2 text-gray-700 list-disc pl-5">
+                <li>Biodiversity corridors</li>
+                <li>Rain capture and basins</li>
+                <li>Push–pull and beneficial habitats</li>
+              </ul>
+            </article>
+            <article className="bg-white rounded-xl border border-gray-200 p-6">
+              <h3 className="text-xl font-semibold text-[#02463D]">
+                Community training
+              </h3>
+              <ul className="mt-3 space-y-2 text-gray-700 list-disc pl-5">
+                <li>Hands-on field workshops</li>
+                <li>School and youth programs</li>
+                <li>Open data and shared learnings</li>
+              </ul>
+            </article>
+          </div>
+
+          <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <img
+              src="/images/for-everyone.jpg"
+              alt="For everyone"
+              className="w-full h-40 object-cover rounded-lg"
+              loading="lazy"
+            />
+            <img
+              src="/images/our-philosophy.jpg"
+              alt="Our philosophy"
+              className="w-full h-40 object-cover rounded-lg"
+              loading="lazy"
+            />
+            <img
+              src="/images/pest-management.jpg"
+              alt="IPM"
+              className="w-full h-40 object-cover rounded-lg"
+              loading="lazy"
+            />
+            <img
+              src="/images/partners.jpg"
+              alt="Community"
+              className="w-full h-40 object-cover rounded-lg"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
 
       {/* Call to action */}
-      <section className="py-20" style={{ backgroundColor: "#02463D" }}>
-        <div className="max-w-7xl mx-auto px-6 text-white">
+      <section className="py-20" style={{ backgroundColor: "#A4BE66" }}>
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
-              <h2 className="text-3xl font-bold">Walk the fields with us</h2>
-              <p className="mt-4 text-white/85 leading-relaxed">
+              <h2 className="text-3xl font-bold text-[#02463D]">
+                Walk the fields with us
+              </h2>
+              <p className="mt-4 text-gray-800/90 leading-relaxed">
                 The best way to understand our work is to feel the soil, smell
                 the compost, and see the canopy. Book a visit, join a workshop,
                 or partner with us to scale nature-positive food systems across
@@ -195,16 +239,18 @@ const About: React.FC = () => {
             </div>
             <div className="flex gap-4">
               <a
-                href="#contact"
-                className="px-6 py-3 bg-white text-[#02463D] font-semibold"
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#02463D] text-white font-semibold hover:bg-[#013a33] transition-colors"
               >
+                <Mail className="w-5 h-5" />
                 Contact us
               </a>
               <a
-                href="#visit"
-                className="px-6 py-3 border border-white text-white font-semibold hover:bg-white hover:text-[#02463D]"
+                href="/farm-tours"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[#02463D] text-[#02463D] font-semibold hover:bg-[#02463D] hover:text-white transition-colors"
               >
-                Plan a visit
+                <Calendar className="w-5 h-5" />
+                Plan a tour
               </a>
             </div>
           </div>

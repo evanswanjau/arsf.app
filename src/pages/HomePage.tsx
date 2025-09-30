@@ -1,22 +1,9 @@
-import { useState, useEffect } from "react";
-import {
-  Leaf,
-  Calendar,
-  Heart,
-  Mail,
-  Phone,
-  MapPin,
-  Star,
-  Shield,
-  Droplets,
-} from "lucide-react";
+import { Leaf, Heart, Star, Shield, Droplets } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 
 const HomePage = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-
   const testimonials = [
     {
       name: "Dr. Sarah Johnson",
@@ -48,29 +35,76 @@ const HomePage = () => {
     },
   ];
 
-  useEffect(() => {
-    const testimonialTimer = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 4000);
-
-    return () => {
-      clearInterval(testimonialTimer);
-    };
-  }, [testimonials.length]);
-
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   };
 
   // Featured products for the Swiper carousel
   const products = [
-    { name: "Red Onions", img: "/images/products/red-onion.jpg" },
-    { name: "Green Bell Peppers", img: "/images/products/green-peppers.jpg" },
-    { name: "Carrots", img: "/images/products/carrots.jpg" },
-    { name: "Cabbage", img: "/images/products/cabbages.webp" },
-    { name: "Eggs", img: "/images/products/eggs.jpeg" },
-    { name: "Maize", img: "/images/products/maize.png" },
-    { name: "Red Onions", img: "/images/products/red-onion.jpg" },
+    {
+      name: "Red Onions",
+      img: "/images/products/red-onion.jpg",
+    },
+    {
+      name: "Green Bell Peppers",
+      img: "/images/products/green-peppers.jpg",
+    },
+    {
+      name: "Carrots",
+      img: "/images/products/carrots.jpg",
+    },
+    {
+      name: "Cabbage",
+      img: "/images/products/cabbages.webp",
+    },
+    {
+      name: "Maize",
+      img: "/images/products/maize.png",
+    },
+    {
+      name: "Eggs",
+      img: "/images/products/eggs.jpeg",
+    },
+    {
+      name: "Spinach",
+      img: "/images/products/spinach.jpg",
+    },
+    {
+      name: "Tomatoes",
+      img: "/images/products/tomatoes.webp",
+    },
+    {
+      name: "Kale (Sukuma)",
+      img: "/images/products/kale.jpg",
+    },
+    {
+      name: "Chilli Peppers",
+      img: "/images/products/chilli-peppers.png",
+    },
+    {
+      name: "Spring Onions",
+      img: "/images/products/spring-onions.webp",
+    },
+    {
+      name: "Coriander",
+      img: "/images/products/coriander.webp",
+    },
+    {
+      name: "Avocado",
+      img: "/images/products/avocado.webp",
+    },
+    {
+      name: "Mangoes",
+      img: "/images/products/mangoes.webp",
+    },
+    {
+      name: "Ginger",
+      img: "/images/products/ginger.webp",
+    },
+    {
+      name: "Garlic",
+      img: "/images/products/garlic.webp",
+    },
   ];
 
   return (
@@ -107,22 +141,24 @@ const HomePage = () => {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <Button
-                onClick={() => scrollToSection("contact")}
-                variant="default"
-                size="md"
-                className="font-semibold cursor-pointer bg-[#02463D] text-white hover:bg-white hover:text-[#02463D] border border-[#02463D] hover:border-white"
-              >
-                Plan your visit
-              </Button>
-              <Button
-                onClick={() => scrollToSection("about")}
-                variant="outline"
-                size="md"
-                className="font-semibold cursor-pointer hover:bg-white hover:text-[#A4BE66]"
-              >
-                About Arabuko
-              </Button>
+              <a href="/contact">
+                <Button
+                  variant="default"
+                  size="md"
+                  className="font-semibold cursor-pointer bg-[#02463D] text-white hover:bg:white hover:text-[#02463D] border border-[#02463D] hover:border-white"
+                >
+                  Plan your visit
+                </Button>
+              </a>
+              <a href="/about">
+                <Button
+                  variant="outline"
+                  size="md"
+                  className="font-semibold cursor-pointer hover:bg-white hover:text-[#A4BE66]"
+                >
+                  About Arabuko
+                </Button>
+              </a>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-3 text-[13px] justify-center">
@@ -155,29 +191,71 @@ const HomePage = () => {
         </a>
       </section>
 
-      {/* Clients Strip */}
-      <section className="py-12 bg-white border-b border-gray-200">
+      {/* Partners Logos Carousel */}
+      <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-xs uppercase tracking-wider text-gray-600 mb-6">
-            Trusted by
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center">
-            {["Acacia", "Baobab", "Cedars", "Drift", "Evergreen", "Futura"].map(
-              (name) => (
-                <div
-                  key={name}
-                  className="h-10 flex items-center justify-center text-gray-500 text-sm"
-                >
-                  {name}
-                </div>
-              )
-            )}
+          <div className="relative">
+            <Swiper
+              modules={[Autoplay]}
+              slidesPerView={2.5} // Use fixed number instead of "auto"
+              spaceBetween={24}
+              loop={true}
+              speed={3000}
+              allowTouchMove={false}
+              autoplay={{
+                delay: 1, // Use 1 instead of 0 for better compatibility
+                disableOnInteraction: false,
+                pauseOnMouseEnter: false,
+              }}
+              breakpoints={{
+                640: { slidesPerView: 4 },
+                768: { slidesPerView: 5 },
+                1024: { slidesPerView: 6 },
+              }}
+              className="logos-swiper"
+              onSwiper={(swiper) => {
+                // Force autoplay to start
+                setTimeout(() => {
+                  swiper.autoplay?.start();
+                }, 100);
+              }}
+            >
+              {[
+                {
+                  src: "/images/partners/bamburi-cement.png",
+                  alt: "Bamburi Cement",
+                },
+                {
+                  src: "/images/partners/friends-of-asf.png",
+                  alt: "Friends of ARSF",
+                },
+                { src: "/images/partners/icipe.png", alt: "ICIPE" },
+                { src: "/images/partners/kalro.webp", alt: "KALRO" },
+                {
+                  src: "/images/partners/kws.jpg",
+                  alt: "Kenya Wildlife Service",
+                },
+                { src: "/images/partners/pwani.png", alt: "Pwani University" },
+                { src: "/images/partners/wwf.png", alt: "WWF" },
+              ].map((logo, idx) => (
+                <SwiperSlide key={`${logo.alt}-${idx}`} className="!w-auto">
+                  <div className="h-12 sm:h-14 md:h-16 flex items-center justify-center px-4 opacity-80 hover:opacity-100 transition-opacity">
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="h-full w-auto object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </section>
 
       {/* About Arabuko Sokoke Ridge Farm */}
-      <section id="about" className="py-20 bg-white border-b border-gray-200">
+      <section id="about" className="py-28 bg-[#A4BE66]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div>
@@ -214,18 +292,27 @@ const HomePage = () => {
               </div>
             </div>
             <div>
-              <img
-                src="/images/hero3.jpg"
-                alt="Arabuko Sokoke Ridge Farm landscape"
-                className="w-full h-[30em] object-cover rounded-lg"
-              />
+              <div className="grid grid-cols-2 gap-4 items-start">
+                <img
+                  src="/images/farmer-posed.jpg"
+                  alt="Farmer at Arabuko Sokoke Ridge Farm"
+                  className="w-full h-[32em] object-cover rounded-lg -translate-y-3 md:-translate-y-8"
+                  loading="lazy"
+                />
+                <img
+                  src="/images/harvested-produce.jpg"
+                  alt="Harvested produce from the farm"
+                  className="w-full h-[32em] object-cover rounded-lg"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Core Values */}
-      <section id="core-values" className="py-20 bg-white">
+      <section id="core-values" className="pb-20 bg-[#A4BE66]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-[#02463D]">
@@ -238,7 +325,7 @@ const HomePage = () => {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-6 border border-gray-200 rounded-lg text-center">
+            <div className="p-6 bg-white rounded-lg text-center">
               <div className="w-14 h-14 mx-auto rounded-full bg-green-100 flex items-center justify-center">
                 <Shield className="w-7 h-7 text-green-700" />
               </div>
@@ -248,7 +335,7 @@ const HomePage = () => {
               </p>
             </div>
 
-            <div className="p-6 border border-gray-200 rounded-lg text-center">
+            <div className="p-6 bg-white rounded-lg text-center">
               <div className="w-14 h-14 mx-auto rounded-full bg-emerald-100 flex items-center justify-center">
                 <Leaf className="w-7 h-7 text-emerald-700" />
               </div>
@@ -258,7 +345,7 @@ const HomePage = () => {
               </p>
             </div>
 
-            <div className="p-6 border border-gray-200 rounded-lg text-center">
+            <div className="p-6 bg-white rounded-lg text-center">
               <div className="w-14 h-14 mx-auto rounded-full bg-blue-100 flex items-center justify-center">
                 <Droplets className="w-7 h-7 text-blue-700" />
               </div>
@@ -268,7 +355,7 @@ const HomePage = () => {
               </p>
             </div>
 
-            <div className="p-6 border border-gray-200 rounded-lg text-center">
+            <div className="p-6 bg-white rounded-lg text-center">
               <div className="w-14 h-14 mx-auto rounded-full bg-rose-100 flex items-center justify-center">
                 <Heart className="w-7 h-7 text-rose-700" />
               </div>
@@ -283,10 +370,7 @@ const HomePage = () => {
       </section>
 
       {/* Products Showcase */}
-      <section
-        id="products"
-        className="py-20 bg-gray-50 border-b border-gray-200"
-      >
+      <section id="products" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-[#02463D]">
@@ -300,16 +384,15 @@ const HomePage = () => {
 
           <div className="relative">
             <Swiper
-              modules={[Autoplay, Navigation]}
-              slidesPerView={1.2}
+              modules={[Autoplay]}
+              slidesPerView={1}
               slidesPerGroup={1}
               spaceBetween={24}
               breakpoints={{
-                640: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
+                640: { slidesPerView: 2, slidesPerGroup: 1 },
+                1024: { slidesPerView: 4, slidesPerGroup: 1 },
               }}
-              loop
-              loopAdditionalSlides={products.length}
+              loop={true}
               speed={600}
               resistanceRatio={0.65}
               grabCursor
@@ -317,8 +400,8 @@ const HomePage = () => {
               className="!px-4 -mx-4 no-scrollbar"
             >
               {products.map((p) => (
-                <SwiperSlide key={p.name} className="!w-auto">
-                  <article className="bg-white rounded-lg overflow-hidden w-72">
+                <SwiperSlide key={p.name}>
+                  <article className="bg-white border border-gray-200 rounded-lg overflow-hidden">
                     <img
                       src={p.img}
                       alt={p.name}
@@ -352,15 +435,11 @@ const HomePage = () => {
       </section>
 
       {/* Testimonials - new UI */}
-      <section
-        id="testimonials"
-        className="py-20 border-b border-gray-200"
-        style={{ backgroundColor: "#02463D" }}
-      >
+      <section id="testimonials" className="py-20 bg-[#02463D]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-white">
             <h2 className="text-3xl text-white md:text-4xl font-bold">
-              What Partners Say
+              What Our Partners Say
             </h2>
             <p className="mt-2 text-white/80">
               Real stories from our community
@@ -407,21 +486,6 @@ const HomePage = () => {
               ))}
             </Swiper>
           </div>
-
-          {/* Stats row */}
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 text-white">
-            {[
-              { n: "10,000+", l: "Trees Planted" },
-              { n: "2,500", l: "Farmers Trained" },
-              { n: "98%", l: "Seedling Survival" },
-              { n: "15", l: "Village Groups" },
-            ].map((s) => (
-              <div key={s.l} className="py-6 text-center">
-                <div className="text-2xl font-extrabold">{s.n}</div>
-                <div className="text-sm text-white/80">{s.l}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -429,6 +493,13 @@ const HomePage = () => {
       <section id="visit" className="py-20 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <img
+                src="/images/farm-tours.jpg"
+                alt="Visitors touring Arabuko Sokoke Ridge Farm"
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </div>
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-[#02463D]">
                 Plan a Farm Visit
@@ -447,94 +518,92 @@ const HomePage = () => {
                 <li>• Accessible routes and family-friendly activities</li>
               </ul>
               <div className="mt-8 flex gap-4">
-                <Button
-                  onClick={() => scrollToSection("contact")}
-                  className="font-semibold cursor-pointer bg-[#02463D] text-white hover:bg-white hover:text-[#02463D] border border-[#02463D] hover:border-[#02463D]"
-                >
-                  Book your visit
-                </Button>
-                <Button
-                  onClick={() => scrollToSection("activities")}
-                  variant="outline"
-                  className="font-semibold cursor-pointer hover:bg-white hover:text-[#A4BE66]"
-                >
-                  See activities
-                </Button>
+                <a href="/contact">
+                  <Button className="font-semibold cursor-pointer bg-[#02463D] text-white hover:bg-[#013a33] transition-colors duration-300 transform">
+                    Book your next visit
+                  </Button>
+                </a>
+                <a href="/farm-tours">
+                  <Button
+                    variant="outline"
+                    className="font-semibold cursor-pointer border border-[#02463D] bg-[#02463D] hover:bg-white hover:text-[#02463D] transition-colors duration-300 transform"
+                  >
+                    See activities
+                  </Button>
+                </a>
               </div>
-            </div>
-            <div>
-              <img
-                src="/images/hero2.jpg"
-                alt="Visitors touring Arabuko Sokoke Ridge Farm"
-                className="w-full h-80 object-cover rounded-lg"
-              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Impact Section - "Come Find Your Happy Place" */}
-      <section id="impact" className="py-20 bg-white">
+      {/* Impact Section - 3 simple steps */}
+      <section id="impact" className="py-20 bg-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-[#02463D] mb-12">
-            Come Find Your Happy Place
+            Visit the Farm in 3 Simple Steps
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-gray-50 rounded-lg p-8 hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-[#02463D] rounded-full flex items-center justify-center mx-auto mb-6">
-                <MapPin className="w-8 h-8 text-white" />
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
+            <div className="bg-white rounded-xl p-8">
+              <div className="w-12 h-12 rounded-full bg-[#02463D] text-white flex items-center justify-center mx-auto mb-5 text-lg font-bold">
+                1
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                1. VISIT US IN KILIFI
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
+                Pick a date
               </h3>
               <p className="text-gray-600">
-                Kick back and relax at our sustainable farm experience. Tours
-                available daily from 8:00am to 5:00pm. Closed Sundays.
+                Visits run Mon–Sat, 8:00–17:00 (closed Sundays).
               </p>
             </div>
 
-            <div className="bg-gray-50 rounded-lg p-8 hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-[#02463D] rounded-full flex items-center justify-center mx-auto mb-6">
-                <Calendar className="w-8 h-8 text-white" />
+            <div className="bg-white rounded-xl p-8">
+              <div className="w-12 h-12 rounded-full bg-[#02463D] text-white flex items-center justify-center mx-auto mb-5 text-lg font-bold">
+                2
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                2. BOOK A TOUR OR WORKSHOP
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
+                Choose your experience
               </h3>
               <p className="text-gray-600">
-                Choose from our educational tours, conservation workshops, or
-                sustainable farming experiences. Something meaningful for every
-                visitor.
+                Guided tour, conservation walk, or hands‑on workshop.
               </p>
             </div>
 
-            <div className="bg-gray-50 rounded-lg p-8 hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-[#02463D] rounded-full flex items-center justify-center mx-auto mb-6">
-                <Heart className="w-8 h-8 text-white" />
+            <div className="bg-white rounded-xl p-8">
+              <div className="w-12 h-12 rounded-full bg-[#02463D] text-white flex items-center justify-center mx-auto mb-5 text-lg font-bold">
+                3
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                3. CREATE LASTING MEMORIES
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
+                Book & enjoy
               </h3>
               <p className="text-gray-600">
-                Discover new things about sustainable living, grown right here
-                on the farm. Enjoy meaningful experiences with the people you
-                love.
+                We’ll confirm details and host you on the farm.
               </p>
             </div>
           </div>
 
-          <img
-            src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800"
-            alt="Family enjoying farm experience"
-            className="rounded-lg shadow-xl w-full h-96 object-cover"
-          />
+          <div className="flex items-center justify-center">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#02463D] text-white font-semibold hover:bg-[#A4BE66] hover:text-[#02463D] transition-colors duration-300 transform"
+            >
+              Book your next visit
+            </a>
+          </div>
         </div>
       </section>
 
       {/* Partnership Section - "We know how important food is" */}
       <section id="partnership" className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <img
+                src="/images/real-time-results.jpg"
+                alt="Farm family and community"
+                className="rounded-lg w-full h-full object-cover"
+              />
+            </div>
             <div>
               <h2 className="text-4xl font-bold text-[#02463D] mb-8">
                 We know how important sustainability is
@@ -557,30 +626,18 @@ const HomePage = () => {
               </p>
               <div>
                 <a
-                  href="#contact"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection("contact");
-                  }}
-                  className="text-[#02463D] font-semibold"
+                  href="/sustainability"
+                  className="text-[#02463D] font-semibold hover:text-[#A4BE66] hover:underline transition-all duration-300"
                 >
-                  Partner with us →
+                  Learn more →
                 </a>
               </div>
-            </div>
-
-            <div>
-              <img
-                src="/images/partner.jpg"
-                alt="Farm family and community"
-                className="rounded-lg shadow-xl w-full h-96 object-cover"
-              />
             </div>
           </div>
 
           {/* Values Section */}
           <div className="grid md:grid-cols-3 gap-8 mt-20">
-            <div className="text-center">
+            <div className="text-center bg-white rounded-lg p-8 hover:shadow-lg transition-shadow">
               <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Shield className="w-10 h-10 text-green-600" />
               </div>
@@ -594,7 +651,7 @@ const HomePage = () => {
               </p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center bg-white rounded-lg p-8">
               <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Leaf className="w-10 h-10 text-blue-600" />
               </div>
@@ -608,7 +665,7 @@ const HomePage = () => {
               </p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center bg-white rounded-lg p-8">
               <div className="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Droplets className="w-10 h-10 text-yellow-600" />
               </div>
@@ -625,138 +682,46 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
+      {/* Partners Section */}
+      <section id="partners" className="py-20 bg-[#A4BE66]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-[#02463D] mb-6">
-                Visit Our Farm
+              <h2 className="text-3xl md:text-4xl font-bold text-[#02463D]">
+                Partner with ARSF
               </h2>
-              <p className="text-lg text-gray-700 mb-8">
-                Ready to experience sustainable agriculture and conservation
-                firsthand? We'd love to welcome you to our farm for an
-                unforgettable educational journey.
+              <p className="mt-4 text-gray-700 text-lg leading-relaxed">
+                We collaborate with universities, NGOs, public institutions and
+                private sector to scale regenerative agriculture and
+                conservation outcomes across Kilifi and beyond. Partnerships can
+                include research pilots, field training, biodiversity projects,
+                local sourcing programs, and impact measurement.
               </p>
-
-              <div className="space-y-6 mb-8">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-[#02463D] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-gray-900 text-lg">
-                      Location
-                    </div>
-                    <div className="text-gray-600">
-                      Arabuko Sokoke Forest Reserve
-                      <br />
-                      Kilifi County, Kenya
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-[#02463D] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-gray-900 text-lg">
-                      Call Us
-                    </div>
-                    <div className="text-gray-600">+254 700 000 000</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-[#02463D] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-gray-900 text-lg">Email</div>
-                    <div className="text-gray-600">
-                      info@arabukoridgefarm.com
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Testimonial */}
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-5 h-5 text-yellow-500 fill-current"
-                    />
-                  ))}
-                </div>
-                <blockquote className="text-gray-700 italic mb-4">
-                  "{testimonials[currentTestimonial].quote}"
-                </blockquote>
-                <div className="font-semibold text-gray-900">
-                  {testimonials[currentTestimonial].name}
-                </div>
-                <div className="text-gray-600 text-sm">
-                  {testimonials[currentTestimonial].role}
-                </div>
+              <ul className="mt-6 space-y-2 text-gray-700">
+                <li>
+                  • Co-design evidence-led projects with measurable outcomes
+                </li>
+                <li>
+                  • Access living lab plots, training, and community networks
+                </li>
+                <li>• Share data, learnings, and open resources</li>
+              </ul>
+              <div className="mt-8">
+                <a
+                  href="/partners"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#02463D] text-white font-semibold border border-[#02463D] hover:bg-transparent hover:text-[#02463D] transition-colors duration-300 transform"
+                >
+                  Learn about partnerships
+                </a>
               </div>
             </div>
-
-            <div className="bg-gray-50 p-8 rounded-lg">
-              <h3 className="text-2xl font-bold text-[#02463D] mb-6">
-                Book Your Visit
-              </h3>
-
-              <div className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    placeholder="First Name"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Last Name"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
-                  />
-                </div>
-
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
-                />
-
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
-                />
-
-                <select className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent">
-                  <option value="">Select Visit Type</option>
-                  <option value="educational">Educational Tour</option>
-                  <option value="research">Research Visit</option>
-                  <option value="conservation">Conservation Workshop</option>
-                  <option value="group">Group Booking</option>
-                </select>
-
-                <textarea
-                  rows={4}
-                  placeholder="Tell us about your visit plans and interests..."
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent resize-none"
-                />
-
-                <button className="w-full bg-[#02463D] text-white py-4 rounded-lg font-semibold text-lg hover:bg-[#02463D]/90 transition-colors shadow-lg">
-                  Send Message
-                </button>
-
-                <p className="text-sm text-gray-500 text-center">
-                  We'll get back to you within 24 hours to confirm your visit
-                  details.
-                </p>
-              </div>
+            <div>
+              <img
+                src="/images/tomatoe-picking.jpg"
+                alt="Collaboration at Arabuko Sokoke Ridge Farm"
+                className="w-full h-full object-cover rounded-lg"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>

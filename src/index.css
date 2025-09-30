@@ -178,3 +178,11 @@
 .swiper-button-next::after {
   content: none;
 }
+
+.logos-swiper .swiper-wrapper {
+  transition-timing-function: linear;
+}
+
+.swiper-wrapper {
+  transition-timing-function: linear !important;
+}

@@ -154,13 +154,13 @@ const Products: React.FC = () => {
             <div className="flex gap-4">
               <a
                 href="#contact"
-                className="px-6 py-3 rounded-lg bg-[#02463D] text-white font-semibold hover:bg-[#013a33] transition-colors"
+                className="px-6 py-3 rounded-lg bg-[#02463D] text-white font-semibold hover:bg-[#013a33] transition-colors duration-300 transform"
               >
                 Contact us
               </a>
               <a
                 href="#visit"
-                className="px-6 py-3 rounded-lg border border-[#02463D] text-[#02463D] font-semibold hover:bg-[#02463D] hover:text-white transition-colors"
+                className="px-6 py-3 rounded-lg border border-[#02463D] text-[#02463D] font-semibold hover:bg-[#02463D] hover:text-white transition-colors duration-300 transform"
               >
                 Visit the farm
               </a>

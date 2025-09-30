@@ -17,6 +17,7 @@ import FAQs from "./pages/FAQs";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import React from "react";
+import { HelmetProvider } from "react-helmet-async";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -50,25 +51,27 @@ function NotFound() {
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/farm-tours" element={<FarmTours />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/sustainability" element={<Sustainability />} />
-          <Route path="/partners" element={<Partners />} />
-          <Route path="/faqs" element={<FAQs />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Layout>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/farm-tours" element={<FarmTours />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/sustainability" element={<Sustainability />} />
+            <Route path="/partners" element={<Partners />} />
+            <Route path="/faqs" element={<FAQs />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </HelmetProvider>
   );
 }
 

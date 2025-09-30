@@ -1,87 +1,160 @@
 import React from "react";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenPartner?: () => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onOpenPartner }) => {
+  const companyLinks = [
+    { label: "Home", href: "/" },
+    { label: "Who we are", href: "/about" },
+    { label: "Our products", href: "/products" },
+    { label: "Farm tours", href: "/farm-tours" },
+    { label: "Photo gallery", href: "/gallery" },
+  ];
+
+  const supportLinks = [
+    { label: "Sustainability", href: "/sustainability" },
+    { label: "Our partners", href: "/partners" },
+    { label: "FAQs", href: "/faqs" },
+    { label: "Contact us", href: "/contact" },
+  ];
+
   return (
-    <footer className="bg-[#02463D] text-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <div className="mb-8">
-            <div className="text-3xl font-bold mb-2">ARABUKO SOKOKE</div>
-            <div className="text-lg opacity-80">RIDGE FARM</div>
-          </div>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Pioneering sustainable agriculture and conservation in Kenya's most
-            biodiverse region
-          </p>
-          <div className="flex justify-center space-x-6 mb-8">
-            <a
-              href="#"
-              className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
-              aria-label="Facebook"
-            >
-              <Facebook className="w-6 h-6" />
-            </a>
-            <a
-              href="#"
-              className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
-              aria-label="Twitter"
-            >
-              <Twitter className="w-6 h-6" />
-            </a>
-            <a
-              href="#"
-              className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
-              aria-label="Instagram"
-            >
-              <Instagram className="w-6 h-6" />
-            </a>
-            <a
-              href="#"
-              className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-6 h-6" />
-            </a>
-          </div>
-          <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">
-            {[
-              { name: "About Us", id: "about" },
-              { name: "Farm Tours", id: "activities" },
-              { name: "Our Products", id: "products" },
-              { name: "Gallery", id: "gallery" },
-              { name: "Conservation", id: "impact" },
-              { name: "Visit Us", id: "contact" },
-            ].map((item) => (
-              <button
-                key={item.id}
-                onClick={() => {
-                  document
-                    .getElementById(item.id)
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="hover:text-yellow-300 transition-colors opacity-80 hover:opacity-100"
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-          <div className="my-8">
-            <div className="inline-block w-32 h-8 opacity-20">
-              <div className="grid grid-cols-8 gap-1 h-full">
-                {Array.from({ length: 32 }).map((_, i) => (
-                  <div key={i} className="bg-white rounded-full" />
-                ))}
+    <footer className="bg-[#02463D] text-white">
+      {/* Main Footer Content */}
+      <div className="pt-16 pb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Top area - Fixed grid layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6">
+            {/* Brand - Takes 5 columns on large screens */}
+            <div className="lg:col-span-5">
+              <div className="flex items-center gap-3 mb-6">
+                <img
+                  src="/images/logo-white.png"
+                  alt="ARABUKO SOKOKE RIDGE FARM"
+                  className="w-60 h-auto object-contain"
+                />
               </div>
+              <p className="text-white/80 leading-relaxed mb-6 lg:pr-10">
+                Pioneering sustainable agriculture and conservation in Kenya's
+                most biodiverse region through innovative farming practices and
+                community partnerships.
+              </p>
+
+              <button
+                onClick={onOpenPartner}
+                className="inline-flex items-center justify-center rounded-lg bg-white text-[#02463D] px-8 py-3 font-bold cursor-pointer hover:bg-yellow-300 hover:text-[#013a33] transition-all duration-300 transform"
+              >
+                Become a Partner
+              </button>
+            </div>
+
+            {/* Company Links - Takes 2 columns on large screens */}
+            <div className="lg:col-span-2">
+              <h4 className="text-xl font-bold mb-6 pb-2 border-b-2 border-white/20">
+                Company
+              </h4>
+              <ul className="space-y-3 text-white/90">
+                {companyLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="hover:text-white hover:underline transition-all duration-200 flex items-center gap-2"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Support Links - Takes 2 columns on large screens */}
+            <div className="lg:col-span-2">
+              <h4 className="text-xl font-bold mb-6 pb-2 border-b-2 border-white/20">
+                Support
+              </h4>
+              <ul className="space-y-3 text-white/90">
+                {supportLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="hover:text-white hover:underline transition-all duration-200 flex items-center gap-2"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact - Takes 3 columns on large screens */}
+            <div className="lg:col-span-3">
+              <h4 className="text-xl font-bold mb-6 pb-2 border-b-2 border-white/20">
+                Contact
+              </h4>
+              <ul className="space-y-4 text-white/90">
+                <li className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                  <span>Arabuko Sokoke, Kilifi County, Kenya</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 flex-shrink-0" />
+                  <a
+                    href="tel:+254700000000"
+                    className="hover:text-white hover:underline"
+                  >
+                    +254 700 000 000
+                  </a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 flex-shrink-0" />
+                  <a
+                    href="mailto:info@arabukoridgefarm.com"
+                    className="hover:text-white hover:underline"
+                  >
+                    info@arabukoridgefarm.com
+                  </a>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <div className="font-medium">Operating Hours:</div>
+                    <div className="text-sm mt-1 leading-6">
+                      Mon–Sat: 8:00 AM – 5:00 PM
+                      <br />
+                      Sundays & Holidays: Closed
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
-          <div className="border-t border-white/20 pt-8">
-            <p className="text-sm opacity-70">
-              © 2024 Arabuko Sokoke Ridge Farm. All rights reserved.
+
+          {/* Divider */}
+          <div className="mt-12 border-t border-white/15" />
+
+          {/* Bottom bar */}
+          <div className="py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-sm opacity-80 text-center md:text-left">
+              © {new Date().getFullYear()} Arabuko Sokoke Ridge Farm. All rights
+              reserved.
             </p>
-            <p className="text-xs opacity-50 mt-2">
-              Sustainable agriculture • Conservation • Education • Community
-            </p>
+            <div className="flex items-center gap-6 text-sm opacity-90">
+              <a
+                href="/terms"
+                className="hover:text-white hover:underline transition-colors"
+              >
+                Terms & Conditions
+              </a>
+              <a
+                href="/privacy"
+                className="hover:text-white hover:underline transition-colors"
+              >
+                Privacy Policy
+              </a>
+            </div>
           </div>
         </div>
       </div>

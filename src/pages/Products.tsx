@@ -88,7 +88,7 @@ const Products: React.FC = () => {
     <main className="min-h-screen bg-white">
       {/* Hero */}
       <section
-        className="relative overflow-hidden"
+        className="relative py-10 overflow-hidden"
         aria-label="Products hero"
         style={{
           backgroundImage: "url(/images/products.jpg)",

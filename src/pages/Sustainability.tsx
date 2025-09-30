@@ -86,11 +86,11 @@ const Sustainability: React.FC = () => {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="relative py-10 overflow-hidden">
         <img
           src="/images/pest-management.jpg"
           alt="Sustainable farming practices"
-          className="absolute inset-0 w-full h-96 object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative max-w-7xl mx-auto px-6 py-24 text-white">

@@ -4,7 +4,7 @@ const Privacy: React.FC = () => {
   return (
     <main className="min-h-screen bg-white">
       <section
-        className="relative overflow-hidden"
+        className="relative py-10 overflow-hidden"
         style={{ backgroundColor: "#02463D" }}
       >
         <div className="max-w-7xl mx-auto px-6 py-24 text-white">

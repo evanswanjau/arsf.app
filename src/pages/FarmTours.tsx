@@ -6,7 +6,7 @@ const FarmTours: React.FC = () => {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="relative py-10 overflow-hidden">
         <img
           src="/images/farm-tours.jpg"
           alt="Farm tour"

@@ -6,7 +6,7 @@ const About: React.FC = () => {
     <main className="min-h-screen bg-white">
       {/* Hero */}
       <section
-        className="relative overflow-hidden"
+        className="relative overflow-hidden min-h-[32rem] md:min-h-[36rem]"
         style={{
           backgroundImage: "url(/images/our-philosophy.jpg)",
           backgroundSize: "cover",
@@ -14,7 +14,7 @@ const About: React.FC = () => {
         }}
       >
         <div className="absolute inset-0 bg-black/50" />
-        <div className="relative max-w-7xl mx-auto px-6 py-24">
+        <div className="relative max-w-7xl mx-auto px-6 py-32 md:py-40">
           <div className="max-w-3xl text-white">
             <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
               About Arabuko Sokoke Ridge Farm

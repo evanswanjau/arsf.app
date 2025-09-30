@@ -169,7 +169,7 @@ const FAQs: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#A4BE66]">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-[#02463D]">
             Still have questions?

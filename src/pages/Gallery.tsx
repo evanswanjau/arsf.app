@@ -107,13 +107,13 @@ const Gallery: React.FC = () => {
       description: "Hands-on fieldwork inside a tunnel house.",
     },
     {
-      src: "/images/101222.jpg",
+      src: "/images/101228.jpg",
       alt: "Team in the field",
       category: "Fields",
       description: "Working together during harvest in the fields.",
     },
     {
-      src: "/images/135278.jpg",
+      src: "/images/for-everyone.jpg",
       alt: "Dairy cattle feeding",
       category: "Fields",
       description: "Livestock at the feed line on a partner farm.",
@@ -173,7 +173,7 @@ const Gallery: React.FC = () => {
         <img
           src="/images/hero2.jpg"
           alt="Farm gallery"
-          className="absolute inset-0 w-full h-96 object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative max-w-7xl mx-auto px-6 py-24 text-white">
@@ -261,7 +261,7 @@ const Gallery: React.FC = () => {
       )}
 
       {/* Call to Action */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#A4BE66]">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-[#02463D]">
             See it in person

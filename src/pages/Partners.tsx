@@ -121,7 +121,7 @@ const Partners: React.FC = () => {
               <div className="mt-6">
                 <button
                   onClick={() => window.openPartnerModal?.()}
-                  className="rounded-lg cursor-pointer bg-[#02463D] text-white px-6 py-3 font-semibold hover:bg-[#013a33]"
+                  className="rounded-lg cursor-pointer bg-[#02463D] text-white px-6 py-3 font-semibold hover:bg-[#A4BE66] hover:text-[#02463D] transition-all duration-300 transform"
                 >
                   Partner with us
                 </button>
@@ -249,7 +249,7 @@ const Partners: React.FC = () => {
               <div className="mt-6">
                 <button
                   onClick={() => window.openPartnerModal?.()}
-                  className="rounded-lg bg-[#02463D] text-white px-6 py-3 font-semibold hover:bg-[#013a33]"
+                  className="rounded-lg cursor-pointer bg-[#02463D] text-white px-6 py-3 font-semibold hover:bg-[#A4BE66] hover:text-[#02463D] transition-all duration-300 transform"
                 >
                   Partner with us
                 </button>
@@ -260,7 +260,7 @@ const Partners: React.FC = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16">
+      <section className="py-16 bg-[#A4BE66]">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-[#02463D]">
             Let's Work Together

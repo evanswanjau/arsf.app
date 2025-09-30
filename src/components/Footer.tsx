@@ -45,7 +45,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenPartner }) => {
 
               <button
                 onClick={onOpenPartner}
-                className="inline-flex items-center justify-center rounded-lg bg-white text-[#02463D] px-8 py-3 font-bold cursor-pointer hover:bg-yellow-300 hover:text-[#013a33] transition-all duration-300 transform"
+                className="inline-flex items-center justify-center rounded-lg bg-white text-[#02463D] px-8 py-3 font-bold cursor-pointer hover:bg-[#A4BE66] hover:text-[#013a33] transition-all duration-300 transform"
               >
                 Become a Partner
               </button>
@@ -61,7 +61,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenPartner }) => {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="hover:text-white hover:underline transition-all duration-200 flex items-center gap-2"
+                      className="hover:text-[#A4BE66] hover:underline transition-all duration-200 flex items-center gap-2"
                     >
                       {link.label}
                     </a>
@@ -80,7 +80,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenPartner }) => {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="hover:text-white hover:underline transition-all duration-200 flex items-center gap-2"
+                      className="hover:text-[#A4BE66] hover:underline transition-all duration-200 flex items-center gap-2"
                     >
                       {link.label}
                     </a>
@@ -103,7 +103,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenPartner }) => {
                   <Phone className="w-5 h-5 flex-shrink-0" />
                   <a
                     href="tel:+254700000000"
-                    className="hover:text-white hover:underline"
+                    className="hover:text-[#A4BE66] hover:underline"
                   >
                     +254 700 000 000
                   </a>
@@ -112,7 +112,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenPartner }) => {
                   <Mail className="w-5 h-5 flex-shrink-0" />
                   <a
                     href="mailto:info@arabukoridgefarm.com"
-                    className="hover:text-white hover:underline"
+                    className="hover:text-[#A4BE66] hover:underline"
                   >
                     info@arabukoridgefarm.com
                   </a>
@@ -144,13 +144,13 @@ const Footer: React.FC<FooterProps> = ({ onOpenPartner }) => {
             <div className="flex items-center gap-6 text-sm opacity-90">
               <a
                 href="/terms"
-                className="hover:text-white hover:underline transition-colors"
+                className="hover:text-[#A4BE66] hover:underline transition-colors"
               >
                 Terms & Conditions
               </a>
               <a
                 href="/privacy"
-                className="hover:text-white hover:underline transition-colors"
+                className="hover:text-[#A4BE66] hover:underline transition-colors"
               >
                 Privacy Policy
               </a>

@@ -10,7 +10,7 @@ const FarmTours: React.FC = () => {
         <img
           src="/images/farm-tours.jpg"
           alt="Farm tour"
-          className="absolute inset-0 w-full h-96 object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative max-w-7xl mx-auto px-6 py-24 text-white">
@@ -77,43 +77,43 @@ const FarmTours: React.FC = () => {
             <form className="mt-6 space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <input
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
                   placeholder="First name"
                 />
                 <input
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
                   placeholder="Last name"
                 />
               </div>
               <input
-                className="w-full px-4 py-3 rounded-lg border border-gray-300"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
                 placeholder="Email"
                 type="email"
               />
               <input
-                className="w-full px-4 py-3 rounded-lg border border-gray-300"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
                 placeholder="Phone"
                 type="tel"
               />
               <div className="grid md:grid-cols-3 gap-4">
                 <input
                   type="date"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
                   placeholder="Preferred date"
                 />
                 <input
                   type="time"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
                   placeholder="Preferred time"
                 />
-                <select className="w-full px-4 py-3 rounded-lg border border-gray-300">
+                <select className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent">
                   <option>Group size: 1–3</option>
                   <option>Group size: 4–8</option>
                   <option>Group size: 9–15</option>
                   <option>Group size: 16+</option>
                 </select>
               </div>
-              <select className="w-full px-4 py-3 rounded-lg border border-gray-300">
+              <select className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent">
                 <option>Interest focus: General</option>
                 <option>Interest focus: Nursery & propagation</option>
                 <option>Interest focus: Compost & soil health</option>
@@ -121,11 +121,11 @@ const FarmTours: React.FC = () => {
                 <option>Interest focus: School/group learning</option>
               </select>
               <textarea
-                className="w-full px-4 py-3 rounded-lg border border-gray-300"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
                 rows={5}
                 placeholder="Tell us more about your visit (access needs, timing flexibility, topics of interest)"
               />
-              <button className="w-full cursor-pointer border border-[#02463D] bg-[#02463D] hover:bg:white hover:text-[#02463D] text-white py-3 rounded-lg font-semibold">
+              <button className="w-full cursor-pointer border border-[#02463D] bg-[#02463D] hover:bg-white hover:text-[#02463D] text-white py-3 rounded-lg font-semibold transition-all duration-300 transform">
                 Request booking
               </button>
             </form>
@@ -243,7 +243,7 @@ const FarmTours: React.FC = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-gray-100">
+      <section className="py-24 bg-[#A4BE66]">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-[#02463D]">Ready to visit?</h2>
           <p className="mt-3 text-gray-700 max-w-2xl mx-auto">

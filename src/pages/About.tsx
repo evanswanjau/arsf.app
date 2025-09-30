@@ -240,7 +240,7 @@ const About: React.FC = () => {
             <div className="flex gap-4">
               <a
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#02463D] text-white font-semibold hover:bg-[#013a33] transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#02463D] text-white font-semibold hover:bg-[#A4BE66] hover:text-[#02463D] transition-colors"
               >
                 <Mail className="w-5 h-5" />
                 Contact us

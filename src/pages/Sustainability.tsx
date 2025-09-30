@@ -180,7 +180,7 @@ const Sustainability: React.FC = () => {
                 href="https://www.kalro.org/"
                 target="_blank"
                 rel="noreferrer"
-                className="text-[#02463D] underline"
+                className="text-[#02463D] hover:text-[#A4BE66] hover:underline transition-all duration-300"
               >
                 KALRO
               </a>{" "}
@@ -189,7 +189,7 @@ const Sustainability: React.FC = () => {
                 href="https://www.icipe.org/"
                 target="_blank"
                 rel="noreferrer"
-                className="text-[#02463D] underline"
+                className="text-[#02463D] hover:text-[#A4BE66] hover:underline transition-all duration-300"
               >
                 ICIPE
               </a>{" "}
@@ -238,7 +238,7 @@ const Sustainability: React.FC = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16">
+      <section className="py-16 bg-[#A4BE66]">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-[#02463D]">Learn More</h2>
           <p className="mt-3 text-gray-700 max-w-2xl mx-auto">

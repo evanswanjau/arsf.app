@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenPartner }) => {
             </div>
             <button
               onClick={onOpenPartner}
-              className="ml-3 rounded-full bg-[#02463D] text-white px-4 py-2 text-sm font-semibold hover:bg-[#013a33]"
+              className="ml-3 rounded-full bg-[#02463D] text-white cursor-pointer px-5 py-3 text-sm font-bold hover:bg-[#A4BE66] transition-all duration-300 transform"
             >
               Become a partner
             </button>

@@ -15,7 +15,7 @@ const baseStyles =
 
 const variantStyles: Record<ButtonVariant, string> = {
   default: "bg-white text-[#02463D] hover:bg-white/90",
-  outline: "border border-white text-white hover:bg-white hover:text-[#02463D]",
+  outline: "border border-white text-white hover:bg-white hover:text-[#A4BE66]",
   ghost: "bg-transparent text-inherit hover:bg-white/10",
 };
 

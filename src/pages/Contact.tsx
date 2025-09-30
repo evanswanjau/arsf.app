@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
         <img
           src="/images/contact.jpg"
           alt="Farm path"
-          className="absolute inset-0 w-full h-96 object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative max-w-7xl mx-auto px-6 py-24 text-white">
@@ -44,7 +44,7 @@ const Contact: React.FC = () => {
                     <div className="font-semibold text-gray-900">Location</div>
                     <a
                       href="#map"
-                      className="text-gray-700 no-underline hover:underline hover:text-[#02463D] transition-colors"
+                      className="text-gray-700 no-underline hover:underline hover:text-[#A4BE66] transition-colors"
                     >
                       Arabuko Sokoke Forest Reserve, Kilifi County
                     </a>
@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
                     <div className="font-semibold text-gray-900">Phone</div>
                     <a
                       href="tel:+254700000000"
-                      className="text-gray-700 no-underline hover:underline hover:text-[#02463D] transition-colors"
+                      className="text-gray-700 no-underline hover:underline hover:text-[#A4BE66] transition-colors"
                     >
                       +254 700 000 000
                     </a>
@@ -79,7 +79,7 @@ const Contact: React.FC = () => {
                     <div className="font-semibold text-gray-900">Email</div>
                     <a
                       href="mailto:info@arabukoridgefarm.com"
-                      className="text-gray-700 no-underline hover:underline hover:text-[#02463D] transition-colors"
+                      className="text-gray-700 no-underline hover:underline hover:text-[#A4BE66] transition-colors"
                     >
                       info@arabukoridgefarm.com
                     </a>
@@ -112,34 +112,34 @@ const Contact: React.FC = () => {
               <form className="mt-6 space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
                   <input
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
                     placeholder="First name"
                   />
                   <input
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
                     placeholder="Last name"
                   />
                 </div>
                 <input
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
                   placeholder="Email"
                 />
                 <input
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
                   placeholder="Phone"
                 />
-                <select className="w-full px-4 py-3 rounded-lg border border-gray-300">
+                <select className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent">
                   <option>General inquiry</option>
                   <option>Orders & availability</option>
                   <option>Partnerships</option>
                   <option>Support</option>
                 </select>
                 <textarea
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
                   rows={5}
                   placeholder="Tell us more..."
                 />
-                <button className="w-full cursor-pointer border border-[#02463D] bg-[#02463D] hover:bg-white hover:text-[#02463D] text-white py-3 rounded-lg font-semibold">
+                <button className="w-full cursor-pointer border border-[#02463D] bg-[#02463D] hover:bg-white hover:text-[#02463D] text-white py-3 rounded-lg font-semibold transition-all duration-300 transform">
                   Submit
                 </button>
               </form>

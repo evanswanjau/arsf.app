@@ -119,7 +119,7 @@ const HomePage = () => {
                 onClick={() => scrollToSection("about")}
                 variant="outline"
                 size="md"
-                className="font-semibold cursor-pointer hover:bg-white hover:text-[#02463D]"
+                className="font-semibold cursor-pointer hover:bg-white hover:text-[#A4BE66]"
               >
                 About Arabuko
               </Button>
@@ -456,7 +456,7 @@ const HomePage = () => {
                 <Button
                   onClick={() => scrollToSection("activities")}
                   variant="outline"
-                  className="font-semibold cursor-pointer hover:bg-white hover:text-[#02463D]"
+                  className="font-semibold cursor-pointer hover:bg-white hover:text-[#A4BE66]"
                 >
                   See activities
                 </Button>

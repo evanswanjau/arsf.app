@@ -37,24 +37,24 @@ const PartnerModal: React.FC<PartnerModalProps> = ({ open, onClose }) => {
           </p>
           <form className="space-y-3" onSubmit={(e) => e.preventDefault()}>
             <input
-              className="w-full px-4 py-3 rounded-lg border border-gray-300"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
               placeholder="Organization / Name"
               required
             />
             <div className="grid md:grid-cols-2 gap-3">
               <input
-                className="w-full px-4 py-3 rounded-lg border border-gray-300"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
                 placeholder="Email"
                 type="email"
                 required
               />
               <input
-                className="w-full px-4 py-3 rounded-lg border border-gray-300"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent"
                 placeholder="Phone"
                 type="tel"
               />
             </div>
-            <select className="w-full px-4 py-3 rounded-lg border border-gray-300">
+            <select className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#02463D] focus:border-transparent">
               <option>Partnership type</option>
               <option>Research collaboration</option>
               <option>Community training</option>
@@ -66,7 +66,7 @@ const PartnerModal: React.FC<PartnerModalProps> = ({ open, onClose }) => {
               rows={4}
               placeholder="How would you like to collaborate?"
             />
-            <button className="w-full cursor-pointer border border-[#02463D] bg-[#02463D] hover:bg-white hover:text-[#02463D] text-white py-3 rounded-lg font-semibold">
+            <button className="w-full cursor-pointer border border-[#02463D] bg-[#02463D] hover:bg-white hover:text-[#02463D] text-white py-3 rounded-lg font-semibold transition-all duration-300 transform">
               Send interest
             </button>
             <p className="text-xs text-gray-500 text-center">

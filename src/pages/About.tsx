@@ -20,12 +20,13 @@ const About: React.FC = () => {
               About Arabuko Sokoke Ridge Farm
             </h1>
             <p className="mt-5 text-lg opacity-90">
-              We are a community-first regenerative agriculture initiative in
-              Kilifi, Kenya. Our purpose is simple and bold: grow nutritious
-              food, restore biodiversity, and help people rediscover a healthy
-              relationship with land and one another. Everything we do is
-              evidence-led, partner-driven, and designed for long-term
-              environmental and social resilience.
+              We are an integrated Community-first regenerative agriculture
+              initiative in Kilifi County Kenya. Our Purpose is Simple and bold:
+              to use the Land productively, restore biodiversity by integrating
+              a virtuous cycle of farming through dairy animals, beef lot
+              farming, crop farming, apiary farming, Poultry for eggs and meat
+              and fish farming to empower the community with jobs, best practice
+              in farming and food sufficiency.
             </p>
           </div>
         </div>
@@ -42,32 +43,32 @@ const About: React.FC = () => {
                   Arabuko Sokoke Ridge Farm began as a small demonstration plot
                   on the edge of the Arabuko-Sokoke forest, a globally
                   significant biodiversity hotspot. What started as a handful of
-                  beds and a nursery has grown into a living classroom where
-                  local farmers, conservationists, students, and visitors can
-                  learn practical methods for soil health, water stewardship,
-                  and nature-positive livelihoods. We cultivate with curiosity
-                  and humility, always measuring results and sharing the lessons
-                  openly.
+                  beds and a nursery has grown into a comprehensive integrated
+                  farm where dairy animals, beef cattle, poultry, apiary, crops,
+                  and ornamental birds work together in a virtuous cycle. This
+                  creates a living classroom where local farmers,
+                  conservationists, students, and visitors can learn practical
+                  methods for integrated farming, soil health, water
+                  stewardship, and nature-positive livelihoods.
                 </p>
                 <p>
-                  From day one, we made three commitments. First, we will only
-                  deploy practices we are willing to demonstrate in our own
-                  fields. Second, we will design with people and ecosystems in
-                  mind, which means building for long-term benefits instead of
-                  short-term gains. Third, we will relentlessly document
-                  outcomes—yields, survival rates, livelihoods, biodiversity—and
-                  use those insights to improve the work and support others to
-                  do the same.
+                  Our integrated approach means each division supports the
+                  others: dairy animals provide manure for crops, crops feed
+                  livestock, apiary supports pollination, ornamental birds add
+                  beauty while contributing to biodiversity, and fish farming
+                  completes the aquatic ecosystem. This creates a complete cycle
+                  of productivity and sustainability that empowers communities
+                  with jobs, best practices in farming, and food sufficiency.
                 </p>
                 <p>
                   Today, the ridge is both farm and field lab. You will find
-                  indigenous seedlings acclimating under shade cloth,
-                  intercropped beds testing water-efficient spacing, pollinator
-                  strips drawing bees to the garden’s edge, compost windrows
-                  quietly transforming waste into life, and families moving
-                  slowly along tree-shaded paths. This is a place to learn, to
-                  breathe, and to build a shared future that is good for people
-                  and planet.
+                  dairy cows grazing in rotation, beehives buzzing with
+                  activity, poultry houses with free-range birds, feed lots with
+                  quality beef cattle, ornamental birds adding beauty to the
+                  landscape, and crops growing in harmony with all these
+                  systems. This is a place to learn, to breathe, and to build a
+                  shared future that is good for people and planet through
+                  integrated farming.
                 </p>
               </div>
             </div>

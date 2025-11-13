@@ -39,71 +39,71 @@ const HomePage = () => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Featured products for the Swiper carousel
+  // Featured products for the Swiper carousel - mixed from all farm divisions
   const products = [
+    {
+      name: "Arabuko Milk",
+      img: "/images/products/milk.jpg",
+      category: "Dairy",
+    },
+    {
+      name: "Arabuko Honey",
+      img: "/images/products/honey.jpg",
+      category: "Apiary",
+    },
+    {
+      name: "Arabuko Eggs",
+      img: "/images/products/eggs.jpeg",
+      category: "Poultry",
+    },
+    {
+      name: "Arabuko Chicken",
+      img: "/images/products/chicken.webp",
+      category: "Poultry",
+    },
+    {
+      name: "Arabuko Beef",
+      img: "/images/products/beef.jpg",
+      category: "Feed Lot",
+    },
     {
       name: "Red Onions",
       img: "/images/products/red-onion.jpg",
-    },
-    {
-      name: "Green Bell Peppers",
-      img: "/images/products/green-peppers.jpg",
-    },
-    {
-      name: "Carrots",
-      img: "/images/products/carrots.jpg",
-    },
-    {
-      name: "Cabbage",
-      img: "/images/products/cabbages.webp",
-    },
-    {
-      name: "Maize",
-      img: "/images/products/maize.png",
-    },
-    {
-      name: "Eggs",
-      img: "/images/products/eggs.jpeg",
-    },
-    {
-      name: "Spinach",
-      img: "/images/products/spinach.jpg",
+      category: "Crops",
     },
     {
       name: "Tomatoes",
       img: "/images/products/tomatoes.webp",
+      category: "Crops",
     },
     {
-      name: "Kale (Sukuma)",
-      img: "/images/products/kale.jpg",
+      name: "Carrots",
+      img: "/images/products/carrots.jpg",
+      category: "Crops",
     },
     {
-      name: "Chilli Peppers",
-      img: "/images/products/chilli-peppers.png",
+      name: "Tausi (Peacocks)",
+      img: null,
+      placeholder: "🦚",
+      category: "Ornamental Birds",
     },
     {
-      name: "Spring Onions",
-      img: "/images/products/spring-onions.webp",
+      name: "Arabuko Yoghurt",
+      img: null,
+      placeholder: "🥛",
+      category: "Dairy",
     },
     {
-      name: "Coriander",
-      img: "/images/products/coriander.webp",
+      name: "Arabuko Wax",
+      img: null,
+      placeholder: "🍯",
+      category: "Apiary",
     },
     {
-      name: "Avocado",
-      img: "/images/products/avocado.webp",
-    },
-    {
-      name: "Mangoes",
-      img: "/images/products/mangoes.webp",
-    },
-    {
-      name: "Ginger",
-      img: "/images/products/ginger.webp",
-    },
-    {
-      name: "Garlic",
-      img: "/images/products/garlic.webp",
+      name: "Arabuko Goats",
+      img: null,
+      placeholder: "🐐",
+      category: "Feed Lot",
     },
   ];
 
@@ -119,9 +119,9 @@ const HomePage = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-tr from-black/90 via-black/60 to-transparent" />
 
-        <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 w-full flex justify-center">
+        <div className="relative max-w-7xl mx-auto px-4 py-16 w-full flex justify-center">
           {/* Headline + CTAs */}
-          <div className="text-white max-w-3xl mx-auto text-center">
+          <div className="text-white max-w-7xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur border border-white/20 text-xs uppercase tracking-widest rounded-lg">
               <span className="w-1.5 h-1.5 bg-emerald-400" /> Arabuko Sokoke
               Ridge Farm
@@ -132,12 +132,13 @@ const HomePage = () => {
               aria-level={1}
               className="mt-5 text-5xl sm:text-6xl font-extrabold leading-[1.05] text-white"
             >
-              Growing food. Restoring nature. Empowering communities.
+              Growing food. Building livestock of the future. Beautifying nature
+              with ornamental birds. Filling baskets with eggs and meat.
+              Empowering communities.
             </div>
-            <p className="mt-5 text-lg sm:text-xl text-white/90 max-w-2xl">
-              Evidence-led agriculture and conservation programs delivering
-              measurable outcomes for people and planet across Kilifi and
-              beyond.
+            <p className="mt-5 text-lg sm:text-xl text-white/90 max-w-2xl mx-auto">
+              We are an integrated organic farm - Arabuko Sokoke Farm: the land
+              of Milk and Honey
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
@@ -163,9 +164,9 @@ const HomePage = () => {
 
             <div className="mt-10 flex flex-wrap gap-3 text-[13px] justify-center">
               {[
-                "Regenerative agriculture",
-                "Biodiversity restoration",
-                "Community training",
+                "Integrated farming",
+                "Dairy & Livestock",
+                "Apiary & Poultry",
               ].map((badge) => (
                 <span
                   key={badge}
@@ -262,20 +263,23 @@ const HomePage = () => {
               <h2 className="text-4xl font-bold text-[#02463D]">
                 About Arabuko Sokoke Ridge Farm
               </h2>
-              <p className="mt-6 text-lg text-gray-700 leading-relaxed">
-                Arabuko Sokoke Ridge Farm is a community-driven initiative
-                focused on regenerative agriculture, biodiversity restoration,
-                and meaningful education. We steward land in Kilifi with
-                practices that improve soil health, protect wildlife habitats,
-                and uplift local livelihoods.
+              <p className="mt-6 text-xl text-gray-600 leading-relaxed">
+                We are an integrated Community-first regenerative agriculture
+                initiative in Kilifi County Kenya. Our Purpose is Simple and
+                bold: to use the Land productively, restore biodiversity by
+                integrating a virtuous cycle of farming through dairy animals,
+                beef lot farming, crop farming, apiary farming, Poultry for eggs
+                and meat and fish farming to empower the community with jobs,
+                best practice in farming and food sufficiency.
               </p>
-              <p className="mt-4 text-gray-700 leading-relaxed">
-                Through partnerships and evidence-led methods, we plant
-                indigenous trees, train farmers, and build resilient supply
-                systems that benefit people and planet. Visitors experience
-                conservation in action and learn practical skills for
-                sustainable living.
-              </p>
+              {/* <p className="mt-4 text-gray-700 leading-relaxed">
+                Our integrated approach creates a sustainable ecosystem where
+                each division supports the others - dairy animals provide manure
+                for crops, crops feed livestock, apiary supports pollination,
+                and ornamental birds add beauty while contributing to
+                biodiversity. This creates a complete cycle of productivity and
+                sustainability.
+              </p> */}
               <div className="mt-6 grid grid-cols-3 gap-6 text-center">
                 {[
                   { n: "10,000+", l: "Trees Planted" },
@@ -402,16 +406,32 @@ const HomePage = () => {
               {products.map((p) => (
                 <SwiperSlide key={p.name}>
                   <article className="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                    <img
-                      src={p.img}
-                      alt={p.name}
-                      className="w-full h-56 object-cover"
-                    />
+                    {p.img ? (
+                      <img
+                        src={p.img}
+                        alt={p.name}
+                        className="w-full h-56 object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-56 bg-gray-100 flex items-center justify-center">
+                        <span className="text-6xl">{p.placeholder}</span>
+                      </div>
+                    )}
                     <div className="p-5">
                       <h3 className="text-lg font-semibold">{p.name}</h3>
                       <p className="mt-2 text-sm text-gray-600">
-                        Grown with regenerative methods for great taste and
-                        nutrition.
+                        {p.category === "Dairy" &&
+                          "Fresh dairy products from our integrated farm."}
+                        {p.category === "Apiary" &&
+                          "Pure honey and bee products from our apiary."}
+                        {p.category === "Poultry" &&
+                          "Fresh eggs and poultry from free-range birds."}
+                        {p.category === "Feed Lot" &&
+                          "Quality meat from our feed lot operations."}
+                        {p.category === "Ornamental Birds" &&
+                          "Beautiful ornamental birds for nature and beauty."}
+                        {p.category === "Crops" &&
+                          "Grown with regenerative methods for great taste and nutrition."}
                       </p>
                     </div>
                   </article>
